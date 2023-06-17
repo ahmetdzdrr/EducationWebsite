@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.svg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="sweetalert2.min.js"></script>
+    <script>src=""</script>
+    <title>DZR Academy</title>
+</head>
+
+<body>
+
+    <div class="loading">
+        <div class="loading-animation"></div>
+    </div>
+
+    <div class="content">
+        <header>
+
+            <div class="logo">
+                <img src="img/logo.svg" alt="" onclick="refreshPage()">
+            </div>
+
+            <nav class="navigation">
+                <a href="index.html#home">Anasayfa</a>
+                <a href="index.html#educations">Eğitimler</a>
+                <a href="index.html#about">Hakkımızda</a>
+                <a href="iletisim.html">İletişim</a>
+
+            </nav>
+
+
+            <div class="buttons">
+
+                <button class="sign-in" onclick="openForm()">Giriş Yap<img src="img/sign-in.svg"></button>
+
+                <div class="form-popup" id="myForm">
+                    <form action="#" class="form-container">
+                        <img onclick="closeForm()" src="img/close.svg" alt="">
+                        <h2>Oturum Aç</h2>
+                        <label for="username"><b>Kullanıcı Adı</b></label>
+                        <input type="text" id="username" placeholder="Kullanıcı Adınızı Girin" name="username" required>
+                        <label for="password"><b>Şifre</b></label>
+                        <input type="password" id="password" placeholder="Şifrenizi Girin" name="password" required>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn login">Giriş Yap</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Kapat</button>
+                        </div>
+                        <span class="forgot-password"><a href="#" onclick="closeForm(); openForm2()">Şifremi
+                                Unuttum?</a></span>
+                        <span>Hesabın Yok Mu?<a class="register" href="#"
+                                onclick="closeForm(); openForm1()">Kaydol</a></span>
+                    </form>
+                </div>
+
+                <button class="sign-up" onclick="openForm1()">Kayıt Ol<img src="img/sign-up.svg"></button>
+
+                <div class="form-popup1" id="myForm1">
+
+                    <form action="/action_page.php" class="form-container">
+                        <img onclick="closeForm1()" src="img/close.svg" alt="">
+                        <h2>Kayıt Ol</h2>
+
+                        <form action="#" method="POST">
+                            <label for="username"><b>Kullanıcı Adı:</b></label>
+                            <input type="text" id="username1" name="username" required>
+
+                            <label for="password"><b>Şifre:</b></label>
+                            <input type="password" id="password1" name="password" required>
+
+                            <label for="password-confirm"><b>Şifre Tekrar:</b></label>
+                            <input type="password" id="password-confirm" name="password-confirm" required>
+
+                            <div class="form-buttons">
+                                <button type="submit" class="btn signup">Kayıt Ol</button>
+                                <button type="button" class="btn cancel" onclick="closeForm1()">Kapat</button>
+                            </div>
+
+                            <p>Zaten üye misin? <a href="#" onclick="closeForm1(); openForm()">Giriş Yap</a>
+                            </p>
+                        </form>
+
+                    </form>
+                </div>
+
+                <div class="form-popup1" id="myForm2">
+                    <form action="/action_page.php" class="form-container">
+                        <img onclick="closeForm2()" src="img/close.svg" alt="">
+                        <h2>Şifre Yenile </h2>
+
+                        <form action="#" method="POST">
+                            <label for="username"><b>Kullanıcı Adı:</b></label>
+                            <input type="text" id="username2" name="username" required>
+
+                            <label for="password"><b>Şifre:</b></label>
+                            <input type="password" id="password2" name="password" required>
+
+                            <label for="password-confirm"><b>Şifre Tekrar:</b></label>
+                            <input type="password" id="password-confirm2" name="password-confirm" required>
+
+                            <div class="form-buttons">
+                                <button type="submit" class="btn re-password">Yenile</button>
+                                <button type="button" class="btn cancel" onclick="closeForm2()">Kapat</button>
+                            </div>
+
+
+                        </form>
+
+                    </form>
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </header>
+
+        <div id="clock-container">
+            <div id="clock"></div>
+            <div id="date"></div>
+        </div>
+
+
+
+
+        <section class="contact">
+            <div class="left-contact-side">
+                <label for="name">Adınız:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mesajınız:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="sent">Gönder</button>
+            </div>
+            <div class="right-contact-side">
+                <div class="right-contact-side">
+                    <img src="img/contact-bg.svg" alt="">
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+        <footer>
+            <div class="container">
+
+                <div class="sütun">
+                    <a href="index.html" class="logo-title">
+
+                        <img src="img/logo.svg">
+                        <h4>DZR Academy</h4>
+
+                    </a>
+
+                    <p>Telefon: 555-1234567</p>
+                    <p>Email: info@example.com</p>
+
+                    <p>1234 Örnek Caddesi, Örnek Mahallesi,
+                        Bakırköy / İSTANBUL</p>
+                </div>
+
+                <div class="sütun">
+                    <ul class="tag">
+                        <li><a href="index.html#home">Anasayfa</a></li>
+                        <li><a href="index.html#educations">Eğitim</a></li>
+                        <li><a href="index.html#about">Hakkımızda</a></li>
+                        <li><a href="iletisim.html" class=>İletişim</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="sütun">
+                    <h4 class="social-title">Sosyal Medya</h4>
+                    <ul class="social-media">
+                        <a href="https://twitter.com/softitoakademi"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://www.facebook.com/softitoakademi"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/softitoakademi/"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.linkedin.com/company/softitoakademi/"><i class='bx bxl-linkedin'></i></a>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr>
+            <div class="copyright">
+                <p>&copy; 2023 DZR Academy. Tüm hakları saklıdır.</p>
+            </div>
+
+        </footer>
+
+
+        
+    </div>
+
+    <script src="sweetalert2.min.js"></script>
+        <script src="app.js"></script>
+        
+</body>
+
+
+
+</html>
